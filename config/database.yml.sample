@@ -9,9 +9,9 @@ default: &defaults
   timeout: 5000
 
 development:
-  <<: *defaults
+  <<: *default
   database: db/development.sqlite3
 
 test:
-  <<: *defaults
+  <<: *default
   database: db/test.sqlite3
