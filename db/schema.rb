@@ -11,40 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429020549) do
+ActiveRecord::Schema.define(version: 20140429130648) do
 
-  create_table "categories", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "clients", force: true do |t|
+    t.string  "name"
+    t.string  "email"
+    t.integer "telefone"
+    t.string  "endereco"
   end
-
-  create_table "ordems", force: true do |t|
-    t.text     "description"
-    t.string   "status"
-    t.integer  "os_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ordems", ["category_id"], name: "index_ordems_on_category_id"
-  add_index "ordems", ["os_id"], name: "index_ordems_on_os_id"
-
-  create_table "os", force: true do |t|
-    t.string   "produto"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "name",          null: false
-    t.string   "email",         null: false
-    t.string   "endereco",      null: false
-    t.string   "password_hash", null: false
-    t.string   "password_salt", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
 end
