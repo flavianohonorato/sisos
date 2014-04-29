@@ -1,0 +1,16 @@
+
+<%= form_for :client, url: clients_path do |f| %>
+  <% f.label :name %>
+  <% f.text_field :name %>  
+
+  <% f.label :email %>
+  <% f.text_field :email %>  
+
+  <% f.label :telefone %>
+  <% f.text_field :telefone %>  
+
+  <% f.label :endereco %>
+  <% f.text_field :endereco %>
+
+  <% f.submit %>
+<% end %>
