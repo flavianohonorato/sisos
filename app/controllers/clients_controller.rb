@@ -35,11 +35,11 @@ class ClientsController < ApplicationController
   	  
   	if client.destroy
    	  flash[:notice] = 'Created with success!'
-      redirect_to @client
   	else
   	  flash[:error] = 'Not save, Try Again'
   	  render :new
   	end
+  	redirect_to clients_path
   end
 
   def update
@@ -47,7 +47,6 @@ class ClientsController < ApplicationController
 
   	if @client.update_attributes(params[:client])
   	  flash[:notice] = 'Deleted with success!'
-  	  redirect_to clients_path
   	else
   	  flash[:error] = 'Not Deleted, Try Again'
   	end
