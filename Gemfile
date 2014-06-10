@@ -6,6 +6,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'protected_attributes'
 gem 'thin', '~> 1.6.2'
 gem 'rake', '~> 10.3.2'
+gem 'annotate', '~> 2.6.3' #Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
 
 group :development, :test do
   gem "rspec-rails"
