@@ -1,1 +1,38 @@
-OK
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Author</th>
+      <th>Category</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.description %></td>
+        <td><%= order.status %></td>
+        <td><%= order.author.name %></td>
+        <td><%= order.category.name %></td>
+        <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p>
+  <%= link_to 'New order', new_order_path %>
+  <%= link_to 'New Author', new_author_path %>
+  <%= link_to 'New Category', new_category_path %>
+</p>
+
