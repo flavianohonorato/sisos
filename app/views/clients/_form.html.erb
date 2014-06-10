@@ -1,16 +1,29 @@
+<%= form_for @client do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>  
+  </p>
 
-<%= form_for :client, url: clients_path do |f| %>
-  <% f.label :name %>
-  <% f.text_field :name %>  
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>  
+  </p>
 
-  <% f.label :email %>
-  <% f.text_field :email %>  
+  <p>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>  
+  </p>
 
-  <% f.label :telefone %>
-  <% f.text_field :telefone %>  
+  <p>
+    <%= f.label :birthday %>
+    <%= f.date_select :birthday, start_year: 1950 %>  
+  </p>
 
-  <% f.label :endereco %>
-  <% f.text_field :endereco %>
-
-  <% f.submit %>
+  <p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </p>
+  
+  <p><%= f.submit 'Save' %></p>
+  
 <% end %>

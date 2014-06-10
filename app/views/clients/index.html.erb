@@ -1,26 +1,21 @@
-<h1><%= link_to 'Add New Client', new_client_path %> </h1>
-
-<table class="border-table">
+<table>
 	<tr>
-		<td><strong>ID </strong></td>
 		<td><strong>Name </strong></td>
-		<td><strong>Email </strong></td>
+		<td><strong>Birthday </strong></td>
 		<td><strong>Telephone </strong></td>
-		<td><strong>Address </strong></td>
-		<td>&nbsp</td>
-		<td>&nbsp</td>
-		<td>&nbsp</td>
 	</tr>
   <% @clients.each do |client| %>
 	<tr>
-		<td><p><%=client.id %></p></td>
-		<td><p><%=client.name %></p></td>
-		<td><p><%=client.email %></p></td>
-		<td><p><%=client.telefone %></p></td>
-		<td><p><%=client.endereco %></p></td>
-		<td><%= link_to 'Details', client %></td>
-		<td><%= link_to 'Edit', edit_client_path(client) %></td>
-		<td><%= link_to 'Destroy', client, method: :destroy %></td>
+		<td><%=client.name %></td>
+		<td><%=client.birthday %></td>
+		<td><%=client.phone %></td>
+		<td>
+			<%=link_to 'Details', client %> | 
+			<%=link_to 'Edit', edit_client_path(client) %> |
+			<%=link_to 'Destroy', client, method: :delete, confirm: 'You sure?' %>
+		</td>
 	</tr>
   <% end %>
 </table>
+
+<h3><%= link_to 'Add New Client', new_client_path %> </h3>

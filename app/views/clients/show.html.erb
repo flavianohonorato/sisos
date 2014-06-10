@@ -1,9 +1,21 @@
-<h3>Detalhes do Cliente <span><%= @client.name %></span></h3>
-<p><%= @client.id %></p>
-<p><%= @client.name %></p>
-<p><%= @client.email %></p>
-<p><%= @client.telefone %></p>
-<p><%= @client.endereco %></p>
-
-
-<h1><%= link_to 'Back', clients_path %> </h1>
+<h3> Details <span><%= @client.name %> Client</span></h3>
+<table>
+	<tr>
+		<td><strong>ID </strong></td>
+		<td><strong>Name </strong></td>
+		<td><strong>Email </strong></td>
+		<td><strong>Telephone </strong></td>
+		<td><strong>Birthday </strong></td>
+		<td><strong>Address </strong></td>
+	</tr>
+  
+	<tr>
+		<td><%= @client.id %></td>
+		<td><%= @client.name %></td>
+		<td><%= @client.email %></td>
+		<td><%= @client.phone %></td>
+		<td><%= @client.birthday %></td>
+		<td><%= @client.address %></td>
+	</tr>
+</table>
+<h3><%= link_to 'Back', clients_path %> </h3>
