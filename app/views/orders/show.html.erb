@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @order.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @task.author.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @task.category.name %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= task.created_at.strftime("%d/%m/%Y - %H:%M") %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

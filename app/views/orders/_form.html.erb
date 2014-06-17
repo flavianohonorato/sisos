@@ -1,0 +1,50 @@
+<div class="container">
+  <form class="form-horizontal" action="" method="post">
+<fieldset>
+  <%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <div class="well well-sm">
+        <ul>
+          <% @order.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div><!-- well -->
+      
+    </div>
+  <% end %>
+
+  
+    
+      <%= f.label :description %>
+    <%= f.text_area :description %>
+ 
+    
+
+  
+    <%= f.label :status %><br>
+    <%= f.select :status, (["Pending", "In progress", "Completed"]) %>
+  
+
+  
+    <%= f.label :author_id %><br>
+    <%= f.select :author_id, @authors.collect { |a| [ a.name, a.id ] } %>
+  
+
+  
+    <%= f.label :category_id %><br>
+    <%= f.select :category_id, @categories.collect { |c| [c.name, c.id] } %>
+  
+
+  <%= f.submit "Create Order",
+                  :class => "btn btn-large btn-primary" %>
+
+<% end %>
+</fieldset>
+</form>
+
+
+</div>
